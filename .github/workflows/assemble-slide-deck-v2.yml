@@ -1,0 +1,46 @@
+name: Assemble slide deck v2
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.deck-upload/**'
+      - '.github/workflows/assemble-slide-deck-v2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble PowerPoint
+        run: |
+          mkdir -p slides
+          cat \
+            .deck-upload/chunk-00 \
+            .deck-upload/chunk-01 \
+            .deck-upload/chunk-02 \
+            .deck-upload/chunk-03 \
+            .deck-upload/chunk-04 \
+            .deck-upload/chunk-05 \
+            .deck-upload/chunk-06 \
+            .deck-upload/chunk-07 \
+            .deck-upload/chunk-08 \
+            .deck-upload/chunk-09a \
+            .deck-upload/chunk-09b \
+            .deck-upload/chunk-09c \
+            .deck-upload/chunk-09d \
+            .deck-upload/chunk-10a \
+            | base64 --decode --ignore-garbage \
+            > slides/Group_4_L02_VGG16_Tool_Learning_Starter_Deck_Cleaned.pptx
+          unzip -t slides/Group_4_L02_VGG16_Tool_Learning_Starter_Deck_Cleaned.pptx
+      - name: Commit deck
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add slides/Group_4_L02_VGG16_Tool_Learning_Starter_Deck_Cleaned.pptx
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add cleaned Group 4 slide deck'
+          git push
