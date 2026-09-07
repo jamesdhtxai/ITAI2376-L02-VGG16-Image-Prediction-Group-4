@@ -1,6 +1,8 @@
 # Notebook Folder
 
-Place the final Google Colab/Jupyter notebook for the assignment in this folder.
+This folder now contains the Colab/Jupyter notebook used for the L02 project:
+
+- `L02_VGG16_Group4.ipynb`
 
 ## What the Notebook Does
 
@@ -25,3 +27,5 @@ This course activity is about learning to use the notebook as a deep-learning to
 ## Group Addition
 
 The original lab directions asked us to explore rotation and noise. We added a comparison section so the group could run the same image through original, rotated, and noisy conditions and compare the resulting predictions.
+
+The repository notebook reflects the version used for the project, including the group-added comparison activity.
