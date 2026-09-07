@@ -74,6 +74,7 @@ The main learning point was that the image still looked like the same subject to
 ├── README.md
 ├── PROJECT_PLAN.md
 ├── notebook/
+│   ├── L02_VGG16_Group4.ipynb
 │   └── README.md
 ├── slides/
 │   └── README.md
@@ -84,7 +85,7 @@ The main learning point was that the image still looked like the same subject to
     └── james-delgado.md
 ```
 
-The final Colab notebook, PowerPoint/Google Slides export, screenshots, and other group-member files can be added to these folders as the project is completed.
+The Colab/Jupyter notebook used for the project is now included in the `notebook` folder. The final slide deck, screenshots, and additional group-member files can be added as the project is completed.
 
 ## Final Deliverables
 
