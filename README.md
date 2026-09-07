@@ -80,7 +80,7 @@ The main learning point was that the image still looked like the same subject to
 ├── results/
 │   ├── group-results-template.md
 │   └── james-delgado.md
-└── reflections/
+└── group-journal/
     └── james-delgado.md
 ```
 
